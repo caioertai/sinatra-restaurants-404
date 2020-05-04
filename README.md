@@ -1,7 +1,7 @@
 ## Features
 - [x] As a user I can list all the restaurants
 - [x] As a user I can see one restaurant's details
-- [ ] As a user I can add a restaurant
+- [x] As a user I can add a restaurant
 
 ## Sinatra & ActiveRecord boilerplate
 
