@@ -1,12 +1,17 @@
-## ActiveRecord basics boilerplate
+## Features
+- [x] As a user I can list all the restaurants
+- [x] As a user I can see one restaurant's details
+- [ ] As a user I can add a restaurant
 
-This is a minimalist implementation of ActiveRecord with one `Restaurant` model to live-code a demo for @LeWagon students, part of [Karr examples](https://github.com/lewagon/karr-examples), working with Sinatra.
+## Sinatra & ActiveRecord boilerplate
+
+This is a minimalist implementation of ActiveRecord with Sinatra.
 
 - clone the repo
 - run `rake db:create` to create your db
 - run your migrations with `rake db:migrate`
 
-Now you can play with the `Restaurant` model:
+Now you can play with the `Restaurant` model in:
 
 ```bash
 rake console

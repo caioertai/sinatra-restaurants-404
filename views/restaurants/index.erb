@@ -1,0 +1,32 @@
+<!-- For writing ruby -->
+<!-- <% %> -->
+<!-- For printing ruby -->
+<!-- <%= %> -->
+
+<h1>Restaurants</h1>
+<p>Listing <%= @restaurants.size %> restaurants</p>
+
+<form action="/restaurants" method="post">
+  <label>
+    Name
+    <input type="text" name="name">
+  </label>
+  <br>
+  <label>
+    Address
+    <input type="text" name="address">
+  </label>
+  <br>
+  <input type="submit">
+</form>
+
+<ul>
+  <% @restaurants.each do |restaurant| %>
+    <li>
+      <a href="restaurants/<%= restaurant.id %>">
+        <%= restaurant.name %>
+      </a>
+    </li>
+  <% end %>
+</ul>
+
