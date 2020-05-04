@@ -1,3 +1,4 @@
+<!-- ERB -->
 <!-- For writing ruby -->
 <!-- <% %> -->
 <!-- For printing ruby -->
@@ -6,24 +7,39 @@
 <h1>Restaurants</h1>
 <p>Listing <%= @restaurants.size %> restaurants</p>
 
-<form action="/restaurants" method="post">
+<!-- Check the post "/restaurants" on app.rb to understand how this is working -->
+<!-- The form tag defines that this will post on "/restaurants" -->
+<form method="post" action="/restaurants">
   <label>
     Name
+    <!-- The name attribute here defines the name that this value will have -->
+    <!-- in the params in our controller -->
+    <!-- So: { name: "Name user typed" } -->
     <input type="text" name="name">
   </label>
   <br>
   <label>
     Address
+    <!-- Same as above -->
+    <!-- So: { address: "Address user typed" } -->
     <input type="text" name="address">
   </label>
   <br>
+  <!-- The ugly looking submit button -->
   <input type="submit">
 </form>
 
 <ul>
+  <!-- The @restaurants IV arrives here because this is how controllers -->
+  <!-- talk to the view in Sinatra (also in Rails). It HAS to be an -->
+  <!-- instance variable. -->
+  <!-- This er tag <% %> allows us to run iterations in the code -->
   <% @restaurants.each do |restaurant| %>
+    <!-- ERB will print the block however many times as restaurants we have -->
     <li>
+      <!-- This builds the link to the details by interpolating the ID -->
       <a href="restaurants/<%= restaurant.id %>">
+        <!-- Adds the name of the restaurant as the content of the link -->
         <%= restaurant.name %>
       </a>
     </li>
